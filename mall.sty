@@ -1,0 +1,101 @@
+\def\currversion{August 29, 2009}
+
+\usepackage[a5paper]{geometry} 
+\usepackage[swedish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{fancyhdr} \pagestyle{fancy}
+\usepackage[absolute]{textpos}
+\usepackage{fancyvrb}
+\usepackage{color}
+\usepackage{array}
+\usepackage{fix-cm}
+
+\headheight 0mm
+\textheight 160mm
+
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.0pt}
+
+\TPGrid{148}{210}
+
+
+\newcommand\putpic[5]
+{
+  \begin{textblock}{#3}(#1,#2)
+    \hspace{-5mm}\includegraphics[width=#3mm,
+      height=#4mm]{#5}
+  \end{textblock}
+}
+
+\newcommand\computerdescription[9]
+{
+  % #1 = name
+  % #2 = type
+  % #3 = special function
+  % #4 = operating system
+  % #5 = architecture
+  % #6 = cpu
+  % #7 = memory
+  % #8 = model
+  % #9 = owner
+  
+  \newcommand{\HRule}{\rule{90mm}{0.3mm}}
+
+  \hspace{-6mm} {\fontsize{30}{0}\selectfont \textbf{\MakeUppercase{#1}}}.lysator.liu.se
+
+  \vspace{-3.5mm} \hspace{-10mm} \HRule
+
+  \vspace{-1mm} \hspace{-5.6mm} \textbf{{#2}}
+
+  \lfoot{Mer information finns på
+    \textbf{https://datorhandboken.lysator.liu.se/index.php/#1}}
+
+  \putpic{108}{10}{30}{30}{lyslogo2.pdf}
+
+  \vspace{6mm}
+
+  \large
+
+  \setlength\extrarowheight{4pt}
+  \hspace{-11mm}\begin{tabular}{>{\bfseries}p{40mm}p{70mm}}
+    Specialfunktion: & {#3} \\
+    Operativsystem: & {#4} \\
+    Arkitektur: & {#5} \\
+    CPU: & {#6} \\
+    Minne: & {#7} \\
+    Modell: & {#8} \\
+    Ansvarig root: & \tt{{#9}@lysator.liu.se}\\
+  \end{tabular}
+  
+  \vspace{5mm}
+}
+
+\newcommand\sshfingerprintheading
+{
+  \vfill
+  \centering \textbf{SSH-fingeravtryck:}
+  \normalsize
+}
+
+\definecolor{MyLightGray}{rgb}{0.92,0.92,0.92}
+\DefineVerbatimEnvironment%
+    {sshfingerprint}{Verbatim}
+    {numbersep=5pt,
+      frame=single,framerule=0.3mm, framesep=2mm,
+      fillcolor=\color{MyLightGray},
+      xleftmargin=-3mm,
+      xrightmargin=-3mm
+}
+
+\newcommand\othernotes[2]
+{
+  {
+    \parindent 0.0pt
+    \parskip 2mm
+    
+    \hspace{-5mm} \textbf{#1:}
+    
+    {#2}
+  }
+}

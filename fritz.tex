@@ -1,0 +1,37 @@
+\documentclass[a5paper]{article}
+
+\usepackage{mall}
+
+\begin{document}
+
+   \computerdescription
+       {Fritz}
+       {CPU-server}
+       {ThinLinc-server \linebreak (grafisk fjärrinloggning)}
+       {CentOS 5.3}
+       {x86/PC}
+       {4 $\times$ 700MHz Xeon}
+       {4GB}
+       {Compaq DL580}
+       {derfian}
+
+   \othernotes {ThinLinc} { ThinLinc är en Linuxbaserad
+     terminalserverlösning från Cendio AB. Det beter sig ungefär som
+     screen, fast för din grafiska skrivbordsmiljö. Cendio har varit
+     snälla nog att donera licenser för 100 samtidiga användare - dvs,
+     vi kommer slå i serverns kapacitetstak före licenserna tar
+     slut. För att använda ThinLinc laddar man ner sin klient från
+     \texttt{http://www.cendio.com/downloads/clients/} och pekar klienten mot
+     \texttt{thinlinc.lysator.liu.se}. Inloggningsnamn och lösenord är ditt
+     vanliga inloggningslösenord på Lysator. Frågor och fel kan
+     meddelas till ansvarig root.}
+
+
+   \sshfingerprintheading
+   \begin{sshfingerprint}
+SSH2 RSA: 1a:f1:8a:aa:5f:a1:d9:6f:7d:3d:8e:48:16:6d:6b:37
+SSH2 DSA: 47:99:0d:47:92:a4:12:98:23:04:de:5c:cd:6a:d5:88
+   \end{sshfingerprint}
+
+
+\end{document}
